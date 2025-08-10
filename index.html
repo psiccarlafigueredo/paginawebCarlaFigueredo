@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Psicóloga Carla Figueredo - Atención psicológica para adultos y adolescentes, presencial y online en Montevideo."
+    />
+    <meta name="keywords" content="psicóloga, terapia, Montevideo, psicología online, atención psicológica" />
+    <meta name="author" content="Carla Figueredo" />
+    <title>Psic. Carla Figueredo - Atención Psicológica</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="icon" type="image/png" href="favicon.png" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Handlee&family=Noto+Sans:wght@400;500;600;700&family=Caveat:wght@600&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header>
+      <div class="logo">
+        <img src="perfil.jpg" alt="Logo Psicóloga Carla Figueredo" class="logo-img" />
+      </div>
+      <nav>
+        <ul>
+          <li><a href="#home">Inicio</a></li>
+          <li><a href="#sobre-mi">Sobre mí</a></li>
+          <li><a href="#modalidad">Modalidad</a></li>
+          <li><a href="#contacto">Contacto</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <section id="home" class="hero" data-aos="zoom-in">
+        <img src="perfilperfil.webp" alt="Psic. Carla Figueredo" class="perfil-img" />
+        <h1>Carla Figueredo</h1>
+        <p class="titulo">Psicóloga</p>
+        <p class="info">Modalidad presencial en Montevideo y online.</p>
+        <a href="https://wa.me/59891844437" target="_blank" class="btn whatsapp">
+          <i class="fab fa-whatsapp"></i> Agendá una consulta
+        </a>
+      </section>
+
+      <section id="sobre-mi" class="section sobre-mi" data-aos="fade-up">
+        <h2 class="titulo-mano">¡Conoceme!</h2>
+        <div class="sobre-mi-content">
+          <i class="fas fa-heart icon"></i>
+          <p>
+            ¡Hola! soy Carla Figueredo. Psicóloga clínica, terapeuta EMDR y especialista en
+            Psicotraumatología. Trabajo con adultos y adolescentes, brindando un acompañamiento profesional y
+            cercano para abordar distintas problemáticas.
+          </p>
+        </div>
+      </section>
+
+      <section id="carrusel-consultorio" class="carousel contain reveal">
+        <button class="nav prev" aria-label="Anterior">‹</button>
+
+        <div class="track" aria-live="polite">
+          <div class="slide"><img src="img/consultorio/consultorio-1.jpg" alt="Consultorio vista 1" /></div>
+          <div class="slide"><img src="img/consultorio/consultorio-2.jpg" alt="Consultorio vista 2" /></div>
+          <div class="slide"><img src="img/consultorio/consultorio-3.jpg" alt="Consultorio vista 3" /></div>
+          <div class="slide"><img src="img/consultorio/consultorio-4.jpg" alt="Consultorio vista 4" /></div>
+          <div class="slide"><img src="img/consultorio/consultorio-5.jpg" alt="Consultorio vista 5" /></div>
+        </div>
+
+        <button class="nav next" aria-label="Siguiente">›</button>
+
+        <div class="dots" role="tablist" aria-label="Paginación del carrusel"></div>
+      </section>
+
+      <section id="modalidad" class="section" data-aos="fade-up">
+        <h2 class="titulo-mano">Modalidad</h2>
+        <div class="popup-cards">
+          <!-- Tarjeta 1 -->
+          <div class="popup-card" onclick="abrirPopup(0)">
+            <i class="fas fa-laptop icon"></i>
+            <h3>Online</h3>
+          </div>
+
+          <!-- Tarjeta 2 -->
+          <div class="popup-card" onclick="abrirPopup(1)">
+            <i class="fas fa-user icon"></i>
+            <h3>Presencial</h3>
+          </div>
+        </div>
+
+        <!-- Ventana emergente -->
+        <div id="popup-contenido" class="popup-hidden">
+          <div class="popup-box">
+            <span class="cerrar-popup" onclick="cerrarPopup()">×</span>
+            <div id="popup-texto"></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- <section id="especialidades" class="section" data-aos="fade-up">
+        <h2>Especialidades</h2>
+        <ul>
+          <li><strong>EMDR:</strong> Terapia para procesar traumas y experiencias difíciles.</li>
+          <li>
+            <strong>Ansiedad y Estrés:</strong> Acompañamiento para reducir síntomas y mejorar calidad de
+            vida.
+          </li>
+          <li><strong>Duelo:</strong> Espacio para transitar pérdidas de manera saludable.</li>
+          <li><strong>Terapia con Adolescentes:</strong> Contención en una etapa clave del desarrollo.</li>
+          <li>
+            <strong>Atención Online y Presencial:</strong> Flexibilidad para adaptarse a tus necesidades.
+          </li>
+        </ul>
+      </section> -->
+
+      <section id="faq" class="section" data-aos="fade-up">
+        <h2 class="titulo-mano">Preguntas Frecuentes</h2>
+        <div>
+          <p>
+            <strong>¿A quién está dirigida la atención?</strong><br />
+            A personas adultas y adolescentes que estén atravesando dificultades emocionales, crisis o que
+            deseen iniciar un proceso de autoconocimiento.
+          </p>
+
+          <p>
+            <strong>¿Cómo son las sesiones?</strong><br />
+            Cada sesión dura aproximadamente 50 minutos. Se puede optar por modalidad presencial o virtual.
+          </p>
+
+          <p>
+            <strong>¿Cuánto cuesta la consulta?</strong><br />
+            El valor se coordina directamente al agendar por WhatsApp.
+          </p>
+
+          <p>
+            <strong>¿Qué enfoque terapéutico se utiliza?</strong><br />
+            Trabajo desde un enfoque integrador, con formación en EMDR y psicotraumatología.
+          </p>
+        </div>
+      </section>
+
+      <section id="formacion" class="section" data-aos="fade-up">
+        <h2 class="titulo-mano">Formación</h2>
+        <ul>
+          <li>Licenciada en Psicología - Universidad de la República</li>
+          <li>Terapeuta EMDR</li>
+          <li>Especialista en Psicotraumatología</li>
+        </ul>
+      </section>
+
+      <!--  Ultima seccion -->
+      <section id="contacto" class="contacto">
+        <h2 class="titulo-mano">Agenda tu consulta</h2>
+
+        <form id="formulario" novalidate>
+          <!-- honeypot anti‑spam -->
+          <input
+            type="text"
+            name="empresa"
+            id="empresa"
+            autocomplete="off"
+            tabindex="-1"
+            aria-hidden="true"
+            class="hp"
+          />
+
+          <div class="fila">
+            <label class="campo">
+              <span>Nombre y apellido *</span>
+              <input type="text" name="nombre" required maxlength="80" autocomplete="name" />
+            </label>
+
+            <label class="campo">
+              <span>Email *</span>
+              <input type="email" name="email" required autocomplete="email" inputmode="email" />
+            </label>
+          </div>
+
+          <div class="fila">
+            <label class="campo">
+              <span>Teléfono (opcional)</span>
+              <input type="tel" name="telefono" autocomplete="tel" inputmode="tel" />
+            </label>
+
+            <label class="campo select">
+              <span>Modalidad *</span>
+              <select name="modalidad" required>
+                <option value="">Elegí una opción</option>
+                <option value="Presencial">Presencial</option>
+                <option value="Online">Online</option>
+                <option value="Indistinto">Indistinto</option>
+              </select>
+            </label>
+          </div>
+
+          <label class="campo">
+            <span>Contame brevemente tu motivo de consulta *</span>
+            <textarea
+              name="mensaje"
+              rows="5"
+              required
+              minlength="10"
+              maxlength="800"
+              placeholder="Ej: ansiedad, insomnio, duelo..."
+            ></textarea>
+          </label>
+
+          <div class="fila check">
+            <label class="acepto">
+              <input type="checkbox" id="acepto" required />
+              <span>Acepto ser contactada/o por este medio.</span>
+            </label>
+          </div>
+
+          <div class="acciones"><button id="btnEnviar" type="submit" class="btn-rosa">Enviar</button></div>
+
+          <p id="estado" class="estado" role="status" aria-live="polite"></p>
+        </form>
+
+        <div class="mapa">
+          <p>Consultorio: Cordón, Montevideo</p>
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3459.838981180853!2d-56.18621182369338!3d-34.90305507283553!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x959f80b08a1b505b%3A0xf2e3dd0647cb9c12!2sCord%C3%B3n%2C%2011200%20Montevideo%2C%20Departamento%20de%20Montevideo!5e0!3m2!1ses!2suy!4v1716308290746!5m2!1ses!2suy"
+            width="100%"
+            height="250"
+            style="border: 0"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+          ></iframe>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <img src="perfil.jpg" alt="Logo Psicóloga Carla Figueredo" class="logo-img" />
+      <p>© 2025 Psic. Carla Figueredo</p>
+    </footer>
+    <div class="botones-flotantes">
+      <a href="https://wa.me/59891844437" target="_blank" class="btn icono-whatsapp" aria-label="WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+      </a>
+      <a
+        href="https://www.instagram.com/psic.carlafigueredo"
+        target="_blank"
+        class="btn icono-instagram"
+        aria-label="Instagram"
+      >
+        <i class="fab fa-instagram"></i>
+      </a>
+    </div>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      AOS.init();
+    </script>
+
+    <script src="script.js"></script>
+  </body>
+</html>
