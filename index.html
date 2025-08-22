@@ -20,18 +20,24 @@
     />
   </head>
   <body>
-    <header>
-      <div class="logo">
-        <img src="perfil.jpg" alt="Logo Psicóloga Carla Figueredo" class="logo-img" />
+    <header class="site-header">
+      <div class="header-wrap">
+        <a class="brand" href="#home" aria-label="Inicio">
+          <img src="perfil.jpg" alt="Logo Psicóloga Carla Figueredo" class="brand-img" />
+        </a>
+
+        <button class="nav-toggle" aria-expanded="false" aria-label="Abrir menú">
+          <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+        </button>
+
+        <nav class="nav-links">
+          <ul>
+            <li><a href="#home">Inicio</a></li>
+            <li><a href="#sobre-mi">Sobre mí</a></li>
+            <li><a href="#contacto">Contacto</a></li>
+          </ul>
+        </nav>
       </div>
-      <nav>
-        <ul>
-          <li><a href="#home">Inicio</a></li>
-          <li><a href="#sobre-mi">Sobre mí</a></li>
-          <li><a href="#modalidad">Modalidad</a></li>
-          <li><a href="#contacto">Contacto</a></li>
-        </ul>
-      </nav>
     </header>
 
     <main>
@@ -40,7 +46,7 @@
         <h1>Carla Figueredo</h1>
         <p class="titulo">Psicóloga</p>
         <p class="info">Modalidad presencial en Montevideo y online.</p>
-        <a href="https://wa.me/59891844437" target="_blank" class="btn whatsapp">
+        <a id="btnWhats" href="https://wa.me/59891844437" target="_blank" class="btn whatsapp">
           <i class="fab fa-whatsapp"></i> Agendá una consulta
         </a>
       </section>
@@ -61,11 +67,8 @@
         <button class="nav prev" aria-label="Anterior">‹</button>
 
         <div class="track" aria-live="polite">
-          <div class="slide"><img src="img/consultorio/Consultorio-1.jpg" alt="Consultorio vista 1" /></div>
-          <div class="slide"><img src="img/consultorio/Consultorio-2.jpg" alt="Consultorio vista 2" /></div>
-          <div class="slide"><img src="img/consultorio/Consultorio-3.jpg" alt="Consultorio vista 3" /></div>
-          <div class="slide"><img src="img/consultorio/Consultorio-4.jpg" alt="Consultorio vista 4" /></div>
-          <div class="slide"><img src="img/consultorio/Consultorio-5.jpg" alt="Consultorio vista 5" /></div>
+          <div class="slide"><img src="img/consultorio/consultorio-1.jpg" alt="Consultorio vista 1" /></div>
+          <div class="slide"><img src="img/consultorio/consultorio-2.jpg" alt="Consultorio vista 2" /></div>
         </div>
 
         <button class="nav next" aria-label="Siguiente">›</button>
@@ -149,6 +152,17 @@
         </ul>
       </section>
 
+      <!--  Juego seccion -->
+
+      <section class="soltar-estrés">
+        <h3>Deslizá para obtener una frase</h3>
+        <p>Arrastrá esta nube para dejar ir el estrés</p>
+        <div class="contenedor-nube">
+          <div class="nube" draggable="true">☁️</div>
+        </div>
+        <div class="mensaje-final" hidden></div>
+      </section>
+
       <!--  Ultima seccion -->
       <section id="contacto" class="contacto">
         <h2 class="titulo-mano">Agenda tu consulta</h2>
@@ -213,7 +227,7 @@
             </label>
           </div>
 
-          <div class="acciones"><button id="btnEnviar" type="submit" class="btn-rosa">Enviar</button></div>
+          <div class="acciones"><button type="submit" class="btn" id="btnEnviar">Enviar</button></div>
 
           <p id="estado" class="estado" role="status" aria-live="polite"></p>
         </form>
