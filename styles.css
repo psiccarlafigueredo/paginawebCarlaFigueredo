@@ -17,6 +17,83 @@
     font-family: inherit;
   }
 
+/* ===== Header nuevo ===== */
+:root {
+  --header-h-mobile: 64px;
+  --header-h-desktop: 72px;
+}
+
+.site-header{
+  position: sticky; top: 0; z-index: 1000;
+  background: var(--bg-light);
+  box-shadow: 0 2px 8px rgba(0,0,0,.08);
+}
+.header-wrap{
+  max-width: 1100px; margin: 0 auto;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 10px 16px; height: var(--header-h-mobile);
+}
+@media (min-width: 768px){
+  .header-wrap{ height: var(--header-h-desktop); padding: 12px 20px; }
+}
+
+/* Marca (logo) a la izquierda */
+.brand { display: inline-flex; align-items: center; gap: 10px; text-decoration: none; }
+.brand-img{ width: 56px; height: 56px; object-fit: cover; border-radius: 12px; transition: transform .2s; }
+.brand-img:hover{ transform: scale(1.03); }
+
+/* Navegación */
+.nav-links ul{
+  list-style: none; margin: 0; padding: 0;
+  display: flex; align-items: center; gap: 20px;
+}
+.nav-links a{
+  text-decoration: none; color: var(--text-color); font-weight: 600;
+  padding: 10px 8px; border-radius: 8px;
+}
+.nav-links a:hover{ color: var(--accent-color); }
+
+/* Botón hamburguesa (móvil) */
+.nav-toggle{
+  display: inline-flex; flex-direction: column; gap: 4px;
+  width: 40px; height: 40px; align-items: center; justify-content: center;
+  border: none; background: transparent; cursor: pointer;
+}
+.nav-toggle .bar{
+  width: 22px; height: 2px; background: var(--text-color); border-radius: 2px;
+}
+
+/* Menú móvil desplegable */
+@media (max-width: 767.98px){
+  .nav-links{
+    position: fixed; left: 0; right: 0; top: var(--header-h-mobile);
+    background: var(--bg-light);
+    transform: translateY(-8px); opacity: 0; pointer-events: none;
+    transition: transform .2s ease, opacity .2s ease;
+    box-shadow: 0 8px 20px rgba(0,0,0,.08);
+  }
+  .nav-links ul{
+    flex-direction: column; align-items: stretch; gap: 0;
+  }
+  .nav-links li{ border-top: 1px solid #f0e6f0; }
+  .nav-links a{ padding: 14px 16px; display: block; }
+
+  .nav-links.open{
+    transform: translateY(0); opacity: 1; pointer-events: auto;
+  }
+}
+
+/* En desktop: menú visible, sin toggle */
+@media (min-width: 768px){
+  .nav-toggle{ display: none; }
+  .nav-links{ position: static; transform: none; opacity: 1; pointer-events: auto; box-shadow: none; }
+}
+
+/* Que las anclas no queden tapadas por el header */
+#home, #sobre-mi, #contacto { scroll-margin-top: var(--header-h-mobile); }
+@media (min-width: 768px){
+  #home, #sobre-mi, #contacto { scroll-margin-top: var(--header-h-desktop); }
+}
 
 
   * {
@@ -31,44 +108,6 @@
     margin: 0;
     padding: 0;
     background: var(--main-color);
-  }
-  
-  header {
-    background: var(--bg-light);
-    padding: 15px 20px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    position: sticky;
-    top: 0;
-    z-index: 100;
-  }
-  
-  .logo-img {
-    width: 80px;
-    transition: transform 0.3s ease;
-  }
-  
-  .logo-img:hover {
-    transform: scale(1.1);
-  }
-  
-  
-  nav ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-  }
-  
-  nav a {
-    text-decoration: none;
-    color: var(--text-color);
-    font-weight: 600;
-  }
-  
-  nav a:hover {
-    color: var(--accent-color);
   }
   
   .fixed-whatsapp {
@@ -232,6 +271,13 @@
     text-align: center;
     background: var(--bg-light);
   }
+  footer .logo-img{
+    width:56px; height:56px;
+    object-fit: cover;
+    border-radius: 12px;
+    display: inline-block;
+  }
+  
   
   .redes {
     margin: 10px 0;
@@ -481,4 +527,42 @@ input.error, select.error, textarea.error{ border-color:#e1687a !important; }
 
 .campo {
   margin-top: 16px; 
+}
+
+.soltar-estrés {
+  text-align: center;
+  padding: 40px 20px;
+  background: #fdf5fd;
+  border-radius: 18px;
+  margin: 60px auto;
+  max-width: 600px;
+  font-family: 'Handlee', cursive;
+}
+
+.contenedor-nube {
+  border: 2px dashed #ccc;
+  border-radius: 12px;
+  padding: 40px;
+  margin: 20px auto;
+  background: #fff;
+  position: relative;
+}
+
+.nube {
+  font-size: 48px;
+  cursor: grab;
+  display: inline-block;
+  user-select: none;
+  transition: transform 0.3s ease;
+}
+
+.nube:active {
+  cursor: grabbing;
+  transform: scale(1.1);
+}
+
+.mensaje-final {
+  margin-top: 20px;
+  font-size: 1.3rem;
+  color: #a97fa3;
 }
