@@ -67,7 +67,7 @@ function cerrarPopup() {
   gal.addEventListener("click", (e) => {
     const t = e.target.closest("img");
     if (!t) return;
-    show(t.src); // si más adelante generamos versiones grandes, acá usamos data-full
+    show(t.src);
   });
   overlay.addEventListener("click", (e) => {
     if (e.target === overlay) hide();
@@ -167,7 +167,6 @@ function cerrarPopup() {
   startAuto();
 })();
 
-// (opcional) mantenemos tu animación reveal si la usás en otras secciones
 const revealEls = document.querySelectorAll(".reveal");
 const io = new IntersectionObserver(
   (entries) => {
@@ -245,5 +244,61 @@ if (form) {
     form.reset();
     setWhatsLink();
     estado.textContent = "Listo, se abrió WhatsApp con tu mensaje. ¡Gracias!";
+  });
+}
+
+(function () {
+  const btn = document.querySelector(".nav-toggle");
+  const nav = document.querySelector(".nav-links");
+  if (!btn || !nav) return;
+
+  const close = () => {
+    nav.classList.remove("open");
+    btn.setAttribute("aria-expanded", "false");
+  };
+  const open = () => {
+    nav.classList.add("open");
+    btn.setAttribute("aria-expanded", "true");
+  };
+
+  btn.addEventListener("click", () => {
+    nav.classList.contains("open") ? close() : open();
+  });
+
+  nav.querySelectorAll('a[href^="#"]').forEach((a) => {
+    a.addEventListener("click", close);
+  });
+
+  window.addEventListener("resize", () => {
+    if (window.innerWidth >= 768) close();
+  });
+})();
+
+const nube = document.querySelector(".nube");
+const mensaje = document.querySelector(".mensaje-final");
+
+if (nube && mensaje) {
+  nube.addEventListener("dragstart", (e) => {
+    e.dataTransfer.setData("text/plain", "soltar");
+  });
+
+  const contenedor = document.querySelector(".contenedor-nube");
+  contenedor.addEventListener("dragover", (e) => e.preventDefault());
+
+  contenedor.addEventListener("drop", (e) => {
+    e.preventDefault();
+    nube.style.display = "none";
+    mensaje.hidden = false;
+
+    const frases = [
+      "Permitite este momento para vos ✨",
+      "Todo está bien por ahora 💖",
+      "Respirá. No tenés que poder con todo 🌿",
+      "Soltá. Lo estás haciendo bien ☁️",
+      "Un paso a la vez. Estás avanzando 🌸",
+    ];
+
+    const fraseAleatoria = frases[Math.floor(Math.random() * frases.length)];
+    mensaje.textContent = fraseAleatoria;
   });
 }
